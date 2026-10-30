@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="pt-pt">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>AbeProj | Portfólio</title>
+</head>
+
+<body>
+  <div class="particulas"></div>
+
+  <nav class="navegacao">
+    <ul class="menu">
+      <li>
+        <a href="#inicio" class="menu-link">Início</a>
+      </li>
+      <li>
+        <a href="#sobre" class="menu-link">Sobre</a>
+      </li>
+      <li>
+        <a href="#projetos" class="menu-link">Projetos</a>
+      </li>
+      <li>
+        <a href="#contatos" class="menu-link">Contacto</a>
+      </li>
+    </ul>
+  </nav>
+
+  <main id="inicio" class="cabecalho">
+    <img src="./img/Friendly Young Man in Purple Studio Light.png" alt="Foto de Abmelequ" class="foto-perfil" />
+    <h1>Kilson Lemos</h1>
+    <p class="cabecalho-sub-titulo">Desenvolvedor Front-End</p>
+  </main>
+
+  <section class="sobre" id="sobre">
+    <h2 class="sobre-titulo">Sobre Mim</h2>
+    <div class="sobre-caixa">
+      <p class="sobre-paragrafo">Sou especialista em Front-End, com mais de 4 anos de experiência na ária de desenvolvimento de
+        aplicações web. Transformo designs em interfaces modernas, responsivas e otimizadas, com foco em desempenho e SEO. Combino criatividade e resolução de problemas para criar experiências digitais que geram resultados em ambientes pessoas e corporativos.</p>
+    </div>
+  </section>
+
+  <section class="projetos" id="projetos">
+    <h2 class="prejetos-titulo">Meus Projetos</h2>
+    <div class="projetos-caixa">
+      <div class="projetos-card">
+        <img src="./img/1.png" alt="projeto 1" class="projetos-imagem" />
+        <div class="caixa-texto-projeto">
+          <h3 class="info-projetos">Loja de Carros</h3>
+          <p class="paragrafo-projetos">
+            Loja virtual moderna com animações suaves e design responsivo para
+            uma loja de carros de luxo.
+          </p>
+        </div>
+      </div>
+
+      <div class="projetos-card">
+        <img src="./img/2.png" alt="projeto 2" class="projetos-imagem" />
+        <div class="caixa-texto-projeto">
+          <h3 class="info-projetos">Lugar de Refrescar</h3>
+          <p class="paragrafo-projetos">
+            Venha fortalecer o seu dia com as novas son-drivers lançadas pela
+            empresa sem nome, é agora ou nunca.
+          </p>
+        </div>
+      </div>
+
+      <div class="projetos-card">
+        <img src="./img/3.png" alt="projeto 3" class="projetos-imagem" />
+        <div class="caixa-texto-projeto">
+          <h3 class="info-projetos">Cafeteria</h3>
+          <p class="paragrafo-projetos">
+            A pousada mais bem falada e sobre muitos lugares
+            cá em angola. não perca a oportunidade de provar o melhore café do
+            País.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contatos" id="contatos">
+    <h2 class="contatos-titulo">Entre em Contato</h2>
+    <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+      <div class="grupo-form">
+        <input placeholder="Seu Nome" class="campo-form" id="nome" />
+      </div>
+
+      <div class="grupo-form">
+        <textarea class="campo-form" placeholder="Sua Mensagem" rows="4" id="mensagem"></textarea>
+      </div>
+
+      <button type="submit" class="botao-form">Enviar WhatsApp</button>
+    </form>
+  </section>
+
+  <script>
+    function enviarWhats(event) {
+      event.preventDefault();
+
+      const nome = document.getElementById("nome").value;
+      const mensagem = document.getElementById("mensagem").value;
+      const telefone = "24499956045848";
+
+      const texto = `Olá! Me chamo ${nome}, ${mensagem}`;
+      const mgsFormatada = encodeURIComponent(texto);
+
+      const url = `https://wa.me/${telefone}?text=${mgsFormatada}`;
+
+      console.log(url);
+
+      //abrir numa pag nova
+      window.open(url, "_blank");
+    }
+  </script>
+</body>
+
+</html>
